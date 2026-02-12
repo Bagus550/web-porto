@@ -106,7 +106,7 @@
       </div>
       <div
         class="absolute -bottom-4 -left-4 md:-left-8 bg-yellow-400 border-2 border-black px-3 py-1 md:px-4 md:py-2 font-black text-[10px] md:text-xs uppercase -rotate-12">
-        Hardware Enthusiast</div>
+        IT Enthusiast</div>
     </div>
   </section>
 
@@ -168,7 +168,7 @@
           </h3>
           <div class="text-sm md:text-lg flex flex-wrap gap-4 md:gap-8 mt-6 font-mono font-bold uppercase">
             <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i data-lucide="table"
-                class="w-4 h-4 text-blue-600"></i>Peta Karnaugh</p>
+                class="w-4 h-4 text-blue-600"></i>Tabel Kebenaran</p>
             <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i data-lucide="cpu"
                 class="w-4 h-4 text-blue-600"></i>Gerbang Logika</p>
             <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i
@@ -185,6 +185,8 @@
                 data-lucide="circuit-board" class="w-4 h-4 text-yellow-600"></i>Proteus</p>
             <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i
                 data-lucide="circuit-board" class="w-4 h-4 text-yellow-600"></i>Fritzing</p>
+            <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i
+                data-lucide="circuit-board" class="w-4 h-4 text-yellow-600"></i>EasyEDA</p>
             <p class="flex items-center gap-2 bg-gray-100 px-3 py-1 border border-black italic"><i
                 data-lucide="component" class="w-4 h-4 text-yellow-600"></i>Solder</p>
           </div>
@@ -242,20 +244,25 @@
           <div>
             <h4
               class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
-              Signal Detection (LM393)</h4>
-            <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs">
+              Signal Detection (LM393)
+            </h4>
+            <div
+              class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <div class="flex gap-4 text-blue-600 font-bold uppercase tracking-tight italic">
                 <span>INPUT:</span>
-                <span class="text-black font-normal">NTC Thermistor + Potentiometer (Voltage Divider)</span>
+                <span class="text-black font-normal">Sistem memantau suhu lewat <strong>NTC Thermistor</strong> yang
+                  dirangkai sebagai pembagi tegangan bersama Potensiometer.</span>
               </div>
               <div
                 class="flex gap-4 border-y border-gray-100 py-2 text-yellow-600 font-bold uppercase tracking-tight italic">
                 <span>PROCESS:</span>
-                <span class="text-black font-normal">LM393 Membandingkan V-Ref (R1) dengan V-Sensor (U2)</span>
+                <span class="text-black font-normal">IC <strong>LM393</strong> bekerja membandingkan tegangan referensi
+                  (set point) dengan tegangan aktual dari sensor suhu.</span>
               </div>
               <div class="flex gap-4 text-purple-600 font-bold uppercase tracking-tight italic">
                 <span>TRIGGER:</span>
-                <span class="text-black font-normal">Panas naik -> Resistansi NTC turun -> Output LM393 jadi LOW</span>
+                <span class="text-black font-normal">Begitu suhu naik, resistansi NTC bakal anjlok (drop), bikin output
+                  LM393 berubah jadi sinyal <strong>LOW</strong> sebagai tanda bahaya.</span>
               </div>
             </div>
           </div>
@@ -265,31 +272,39 @@
               class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
               The Memory Latch (NE555)
             </h4>
-            <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs">
+            <div
+              class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <div class="flex gap-4 text-blue-600 font-bold uppercase tracking-tight italic">
                 <span>SET:</span>
-                <span class="text-black font-normal">Pin 2 (TRIG) nerima sinyal LOW dari LM393</span>
+                <span class="text-black font-normal">Sinyal <strong>LOW</strong> dari detektor masuk ke <strong>Pin
+                    2 (TRIG)</strong> pada IC NE555 untuk mengaktifkan sistem.</span>
               </div>
               <div
                 class="flex gap-4 border-y border-gray-100 py-2 text-red-600 font-bold uppercase tracking-tight italic">
                 <span>LATCH:</span>
-                <span class="text-black font-normal">Output (Pin 3) terkunci HIGH -> Buzzer & Transistor ON</span>
+                <span class="text-black font-normal">NE555 bertindak sebagai memori; mengunci <strong>Pin 3
+                    (Output)</strong> di posisi <strong>HIGH</strong> untuk menyalakan Buzzer secara konstan.</span>
               </div>
               <div class="flex gap-4 text-green-600 font-bold uppercase tracking-tight italic">
                 <span>HOLD:</span>
-                <span class="text-black font-normal">Suhu dingin pun, Alarm TETAP NYALA (Self-Holding)</span>
+                <span class="text-black font-normal">Berkat mode <em>Self-Holding</em>, alarm akan tetap berbunyi
+                  walaupun suhu sensor sudah mendingin kembali.</span>
               </div>
             </div>
           </div>
+
           <div>
             <h4
               class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
               Manual Intervention
             </h4>
-            <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs">
+            <div
+              class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               <div class="flex gap-4 text-orange-600 font-bold uppercase tracking-tight italic">
                 <span>RESET:</span>
-                <span class="text-black font-normal">Push Button (SW1) narik Pin 4 ke GND -> Memory Clear</span>
+                <span class="text-black font-normal">Untuk menghentikan alarm, operator harus menekan <strong>Push
+                    Button (SW1)</strong> guna menarik <strong>Pin 4</strong> ke Ground dan melakukan <strong>Memory
+                    Clear</strong>.</span>
               </div>
             </div>
           </div>
@@ -569,10 +584,13 @@
             class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
             Phase 1: Thermal Detection
           </h4>
-          <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify">
-            Saat suhu di sekitar NTC (U2) naik, nilai resistansinya akan turun (Negative Temperature Coefficient). Hal
-            ini menyebabkan tegangan pada Pin 3 LM393 bergeser. Begitu tegangan di Pin 3 melewati ambang batas
-            (Threshold) yang lo set di Potensiometer R1, output LM393 (Pin 1) akan langsung "drop" ke logika LOW.
+          <div
+            class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            Proses dimulai ketika suhu di sekitar <strong>NTC Thermistor (U2)</strong> mengalami peningkatan, yang
+            mengakibatkan nilai resistansinya menurun secara drastis. Fenomena ini menyebabkan pergeseran tegangan pada
+            <strong>Pin 3 (Non-Inverting Input)</strong> IC LM393. Begitu tegangan tersebut melewati ambang batas
+            (Threshold) yang telah dikalibrasi melalui <strong>Potensiometer R1</strong>, output pada Pin 1 akan
+            seketika berubah menjadi logika <strong>LOW</strong> sebagai sinyal aktivasi.
           </div>
         </div>
 
@@ -581,11 +599,13 @@
             class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
             Phase 2: Analog Memory Activation
           </h4>
-          <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify">
-            Sinyal LOW tadi masuk ke Pin 2 (TRIG) IC 555. Di sinilah "keajaiban" memori terjadi. IC 555 bakal pindah ke
-            state HIGH pada Pin 3 dan menguncinya (Latch). Artinya, meskipun suhu NTC turun lagi (api padam) dan sinyal
-            dari LM393 balik ke HIGH, si IC 555 tetep bakal keluarin output HIGH ke Transistor Q1. Hasilnya? Buzzer
-            bakal terus teriak tanpa henti!
+          <div
+            class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            Sinyal LOW tersebut kemudian diteruskan menuju <strong>Pin 2 (Trigger)</strong> pada IC 555. Di tahap inilah
+            fungsi memori bekerja; IC 555 akan mengubah status <strong>Pin 3 (Output)</strong> menjadi HIGH dan
+            menguncinya secara permanen (Latch). Dampaknya, meskipun suhu NTC kembali normal dan output LM393 kembali ke
+            posisi HIGH, IC 555 akan tetap mempertahankan suplai arus ke <strong>Transistor Q1</strong>, sehingga alarm
+            (Buzzer) akan terus berbunyi tanpa henti.
           </div>
         </div>
 
@@ -594,10 +614,12 @@
             class="font-bold text-black uppercase text-[10px] tracking-widest mb-2 opacity-50 underline decoration-blue-500 decoration-2">
             Phase 3: Manual Override
           </h4>
-          <div class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify">
-            Satu-satunya cara buat matiin alarm ini adalah dengan intervensi manusia. Saat tombol SW1 ditekan, Pin 4
-            (RESET) pada IC 555 ditarik ke Ground (0V). Ini bakal maksa IC buat nge-reset memorinya, narik Pin 3 balik
-            ke LOW, dan bikin Buzzer akhirnya berhenti bunyi.
+          <div
+            class="bg-white border-2 border-black p-4 space-y-3 font-mono text-xs text-justify shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            Untuk menghentikan alarm, diperlukan intervensi manual dari operator. Dengan menekan tombol <strong>Push
+              Button (SW1)</strong>, arus pada <strong>Pin 4 (Reset)</strong> IC 555 akan ditarik menuju Ground (0V).
+            Tindakan ini memaksa sistem untuk menghapus memori pengunci, mengembalikan Pin 3 ke posisi LOW, dan secara
+            otomatis menghentikan aktivitas Buzzer hingga sistem mendeteksi adanya kenaikan suhu kembali.
           </div>
         </div>
       </div>
